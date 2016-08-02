@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Pinyin</title>
+  <meta name="Description" content="Clavier en ligne pour écrire les caractères pinyin du chinois">
+  <meta name="Keywords" content="chinois,pinyin,clavier,alphabet,latin">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Heuze Florent" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://www.heuzef.com/"/>
+  <meta property="og:site_name" content="Heuzef"/>
+  <meta property="og:image" content="http://heuzef.com/images/logo_heuzef_hd.png"/>
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="2153" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:title" content="Heuzef - Heuze Florent"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@heuzef"/>
+  <meta name="twitter:creator" content="@heuzef"/>
+  <link rel="shortcut icon" href="http://heuzef.com/favicon.png">
+  <link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./comlat.js"></script>
+  <script type="text/javascript" src="./carch.js"></script>
+</head>
+<body onload="conversion.saisie.focus()">
+  <div align="center">
+    <noscript>
+      &amp;lt;font color="red"&amp;gt;Attention ! &amp;amp;nbsp; JavaScript n'est pas activ&amp;amp;eacute;.&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;
+      Vous devez activer JavaScript dans votre navigateur, veuillez suivre les &amp;lt;a class="ext" href="http://www.enable-javascript.com/fr/" target="_blank"&amp;gt;instructions&amp;lt;/a&amp;gt;.&amp;lt;p&amp;gt;
+    </noscript>
+    <br>
+      <form name="conversion" class="form-horizontal">
+      <div>
+        <h1><a href="https://github.com/heuzef/pinyin" target="_blank">Pinyin</a></h1>
+        <div class="col-lg-3">
+          <a href="http://localhost/pinyin/#" class="btn btn-primary" onclick="conversion.saisie.select();copy()"><i class="ion-document-text"> </i>Séléctionner tout</a>
+          <br><br>
+          <p class="text-primary"><i class="ion-scissors"></i> Couper [Ctrl]+[X] / <i class="ion-ios-copy"></i> Coller [Ctrl]+[V]</p>
+          <hr>
+          <h5>Mode d'emploi</h5>
+          <p>
+            Redigez votre mot, puis indiquez le chiffre correspondant au ton.
+          </p><p>
+          </p><p class="text-primary">zhong<span class="text-danger">1</span> wen<span class="text-danger">2</span>&nbsp;<i class="ion-arrow-right-c"></i>&nbsp;zh<span class="text-danger">ō</span>ng w<span class="text-danger">é</span>n</p><p>
+          </p><p class="text-primary">ni<span class="text-danger">3</span> hao<span class="text-danger">3</span> ma<span class="text-danger">1</span>&nbsp;<i class="ion-arrow-right-c"></i>&nbsp;n<span class="text-danger">ǐ</span> h<span class="text-danger">ǎ</span>o m<span class="text-danger">ā</span></p><p>
+        </p></div>
+        <div class="col-lg-6">
+          <textarea name="saisie" onkeyup="transcrire()" class="form-control" rows="10" id="textArea"></textarea>
+          <a href="https://fr.wikipedia.org/wiki/Hanyu_pinyin" target="_blank"><img src="./4_tons.png" alt="Les 4 tons chinois"></a>
+        </div>
+        <div class="col-lg-3">
+          <div class="btn-group">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ā&#39;)" value="ā">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ē&#39;)" value="ē">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ī&#39;)" value="ī">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ō&#39;)" value="ō">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ū&#39;)" value="ū">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǖ&#39;)" value="ǖ">
+          </div>
+          <hr>
+          <div class="btn-group">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;á&#39;)" value="á">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;é&#39;)" value="é">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;í&#39;)" value="í">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ó&#39;)" value="ó">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ú&#39;)" value="ú">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǘ&#39;)" value="ǘ">
+          </div>
+          <hr>
+          <div class="btn-group">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǎ&#39;)" value="ǎ">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ě&#39;)" value="ě">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǐ&#39;)" value="ǐ">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǒ&#39;)" value="ǒ">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǔ&#39;)" value="ǔ">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǚ&#39;)" value="ǚ">
+          </div>
+          <hr>
+          <div class="btn-group">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;à&#39;)" value="à">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;è&#39;)" value="è">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ì&#39;)" value="ì">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ò&#39;)" value="ò">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ù&#39;)" value="ù">
+            <input type="button" class="btn btn-primary" onclick="alpha(&#39;ǜ&#39;)" value="ǜ">
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+    </form>
+  </div>
+</body>
+</html>
