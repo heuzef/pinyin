@@ -4,4 +4,4 @@ Clavier Pinyin en ligne
 
 Online Pinyin Keyboard
 
-Demo : https://heuzef.com/pinyin
+Demo : https://pinyin.heuzef.com
